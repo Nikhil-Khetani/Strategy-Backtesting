@@ -81,7 +81,6 @@ class Strategy():
             
         if True:
             self.port.rebalance(percent_cash = cash_weight, **weights)
-            print('Trade')
         return cash_weight, weights
 
     def backtest(self, start, end):
@@ -94,9 +93,6 @@ class Strategy():
                 cash_weight, weights=self.trading_strategy(date)
                 date_range.append(date)
                 port_value.append(self.port.value())
-                print(cash_weight)
-                print(weights)
-
         for i in range(len(port_value)-1):
             percent_change.append((port_value[i+1]/port_value[i])-1)
             
@@ -116,8 +112,6 @@ if __name__ == '__main__':
 
     port = Portfolio(cash=10000, tickers=tickers, start=start, end=end)
     
-
-
     strat = Strategy(port)
 
     strat.backtest(datetime.datetime(2019, 1, 1),datetime.datetime(2021, 1, 31))
