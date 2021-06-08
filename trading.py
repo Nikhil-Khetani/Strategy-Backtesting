@@ -108,7 +108,7 @@ class Strategy():
 if __name__ == '__main__':
     start = datetime.datetime(2011, 1, 1)
     end = datetime.datetime(2021, 1, 1)
-    tickers = ['SQQQ', 'TSLA']
+    tickers = ['SQQQ','TSLA']
 
     port = Portfolio(cash=10000, tickers=tickers, start=start, end=end)
     
